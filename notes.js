@@ -9,21 +9,8 @@ const getNotes = () => {
 //ADD NOTE
 const addNote = (title, body) => {
     const notes = loadNotes();//Variable notes is an array
-
-    // const duplicateNotes = notes.filter(function (note) {
-    //     //Check duplicated title
-    //     return note.title === title;
-    // })
-    // const duplicateNotes = notes.filter((note) => note.title === title);//Use arrow function
-    
-    //!! To debug type: node inspect app.js bla bla
-    // Then open browser type chrome://inspect and click the inspect link
-    // Then google dev tool will open an we can debug on there
-    // When you turn off the dev tools, to open this again, type "restart" in the terminal
-    debugger
-
     const duplicateNote = notes.find((note) => note.title === title);
-    // if (duplicateNotes.length === 0) {
+    
     if (duplicateNote === undefined) {
         //Dont find any duplicated notes
         notes.push({
